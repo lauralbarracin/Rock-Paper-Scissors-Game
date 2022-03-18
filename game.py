@@ -8,6 +8,10 @@ from random import randint
 # the index always starts at 0
 choices = [ "rock", "paper", "scissors"]
 
+player_lives = 3
+computer_lives = 3
+total_lives = 3
+
 #Version 1, to explain array indexing
 # player_choice = choices[1]
 #print("index 1 in the choice array is " + player_choice + "paper")
@@ -27,20 +31,32 @@ if computer_choice == player_choice:
 elif computer_choice == "rock":
     if player_choice == "scissors":
         print ("you lose!")
+        #verbose way
+        #player_lives = player_lives -1
+        #simplified way
+        player_lives -= 1
     else:
         print ("you win")
+        computer_lives -=1
 
 elif computer_choice == "paper":
     if player_choice == "scissors":
         print ("you win!")
+        computer_lives -= 1
     else:
         print("you lose!")
+        player_lives -= 1
 
 elif computer_choice == "scissors":
     if player_choice == "paper":
         print("you lose!")
+        player_lives -= 1
     else:
         print("you win")
+        computer_lives -= 1
+
+print ("Player lives:", player_lives)
+print ("Computer lives", computer_lives)
 
 
 
